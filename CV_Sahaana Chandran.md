@@ -70,7 +70,9 @@ _University of California, Riverside, CA -- Sep 2012 - Nov 2013_
 * Cloned, expressed, lysed and purified GST and GST-p53 proteins from bacteria.
 * Cultured mammalian cells (HEK 293) and prepared whole cell extract.
 * Performed GST pull down assay with whole cell extract and GST/GST p53 proteins.
-* Performed western blot to identify teh interaction of Myc-Max with p53. 
+* Performed western blot to identify teh interaction of Myc-Max with p53.
+
+---
 
 ## **Teaching Experience**
 
@@ -79,6 +81,8 @@ _San Diego State University, San Diego, CA -- Aug 2015 - Apr 2017_
 * Fundamentals of Microbiology Lab
 
 Presented lectures and conducted lab experiments. Prepared and graded exams and quizzes. 
+
+---
 
 ## **Skills and Techniques**
 
@@ -94,6 +98,7 @@ Isolation and preservation of cultures, Staining (Gram's. Acid-Fast, Endospore, 
 ### **_Cell Culture Techniques_**
 Media and buffer preparation, Thawing, Expanding, Maintaining and Cryopreservation of various cells lines. 
 
+---
 ## **Publications**
 * **Sahaana Chandran**, Jennifer A. Suggs, Bingyan J. Wang, Andrew Han, Shruti Bhide, Diane E. Cryderman, Steven A. Moore, Sanford I. Bernstein, Lori L. Wallrath, and Girish C. Melkani. _“Suppression of myopathic lamin mutations by muscle-specific activation of AMPK and modulation of downstream signaling.”_  Human Molecular Genetics, (2018).
 * Shruti Bhide, Adriana S. Trujillo, Maureen T. O’Connor, Grant H. Young, Diane E. Cryderman, **Sahaana Chandran**, Mastaneh Nikravesh, Lori L. Wallrath, and Girish C. Melkani. _“Increasing autophagy and blocking Nrf2 suppress laminopathy-induced age-dependent cardiac dysfunction and shortened lifespan.”_ Aging Cell 17, no.3 (2018). 
