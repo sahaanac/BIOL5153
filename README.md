@@ -1,4 +1,4 @@
 # BIOL5153
 
-## Assignment 3 
+## assn03 
 - Executed BLAST programs on remote server.
