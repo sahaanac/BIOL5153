@@ -7,7 +7,7 @@ Practical Programming for Biologists Course Repository.
 
 ## assn04
 - Screenshot showing pwd, script command and output of write_razor_pbs.py script.
-![Assignment4](Images/Assn04_PBS.png)
+![Assignment4](Images/Assn04_PythonScript_Screenshot.png)
 - write_razor_pbs.py - Python script to run on Razor 
 - write_pinnacle_pbs.py - Python script to run on Pinnacle.
 
