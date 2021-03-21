@@ -13,3 +13,6 @@ Practical Programming for Biologists Course Repository.
 
 ## Images
 - Has all the images that were added to this repository as part of assignments.
+
+## assn05
+- nucleotide_composition.py - Python scipt to find the length of a DNA sequence and to calculate the frequencies of ATGC. 
