@@ -4,6 +4,10 @@ import csv
 import argparse
 from Bio import SeqIO
 
+
+def rev_comp(genome,genomestart,genomeend):
+  return genome.seq[genomestart:genomeend].reverse_complement()
+
 # This script will parse a GFF file and extract each feature from the genome
 # inputs: 1) GFF file, 2) corresponding genome sequence (FASTA format)
 
@@ -45,7 +49,8 @@ with open(args.gff, 'r') as gff_in:
         print('>' + genome.id, headerinfo)
 
          # printing sequence based on strand info
-        if strandinfo == '-': 
-            print(genome.seq[genomestart:genomeend].reverse_complement()) 
+        if strandinfo == '-':
+            reversed = rev_comp(genome,genomestart,genomeend)
+            print(reversed)
         else: 
             print(genome.seq[genomestart:genomeend]) 
