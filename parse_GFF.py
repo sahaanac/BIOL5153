@@ -4,6 +4,10 @@ import csv
 import argparse
 from Bio import SeqIO
 
+import re
+from collections import OrderedDict
+
+
 
 def rev_comp(genome,genomestart,genomeend):
   return genome.seq[genomestart:genomeend].reverse_complement()
@@ -26,6 +30,9 @@ genome = SeqIO.read(args.fasta, 'fasta')
 print(genome.id)
 print(genome.seq)
 
+CDS_FEATURE = 'CDS'
+data = OrderedDict()
+finaldict = OrderedDict()
 # open and read in GFF file
 with open(args.gff, 'r') as gff_in:
 
@@ -45,12 +52,51 @@ with open(args.gff, 'r') as gff_in:
         # Header Information
         headerinfo = line[8]
 
-        # printing fasta header
-        print('>' + genome.id, headerinfo)
+        #Feature
+        feature = line[2]
 
-         # printing sequence based on strand info
-        if strandinfo == '-':
-            reversed = rev_comp(genome,genomestart,genomeend)
-            print(reversed)
-        else: 
-            print(genome.seq[genomestart:genomeend]) 
+        # Iterating only if it is CDS Feature
+        if feature == CDS_FEATURE:
+
+            # Regex to identify if exon is present or not
+            exonregex = re.search("exon \d", headerinfo)
+
+            #Regex to identify the type of gene
+            generegex = re.search("(?<=Gene\s)\S*", headerinfo)
+
+            # if No exon available, then continue with reading next line
+            if(exonregex == None):
+                continue;
+            exon_number = exonregex[0]
+            gene = generegex[0]
+            
+            #Adding to dictionary only if exon available
+            if exon_number:
+
+                # Creating unique dictionary key to store elements
+                dict_key = gene + "_" + exon_number
+
+                if strandinfo == '-':
+                    extracted_sequence = rev_comp(genome,genomestart,genomeend)
+                else: 
+                    extracted_sequence = genome.seq[genomestart:genomeend]
+
+                data[dict_key]= extracted_sequence
+
+# Sorting the dictionary keys
+sorted_dictionary = OrderedDict(sorted(data.items()))
+
+# Appending the values of the same key in fianl dictioanry for output purposes
+for key, value in sorted_dictionary.items():
+    gene_key = key.split()
+
+    if (finaldict.get(gene_key[0]) == None):
+        finaldict[gene_key[0]] = value
+    else:
+        finaldict[gene_key[0]] = finaldict[gene_key[0]] + value
+
+# Printing the Output in the expected format
+for key, value in finaldict.items():
+    print(">Citrullus_lanatus_"+key)
+    print(value)
+    print()
